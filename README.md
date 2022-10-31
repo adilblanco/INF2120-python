@@ -121,3 +121,54 @@ Une entité polymorphe est une entité qui peut prendre plusieurs formes. Le pol
 Une méthode exécutée sur un objet est choisie en fonction du type dynamique de l’objet sur lequel elle s’applique, au moment de l’exécution.
 
 le polymorphisme est donc mis en oeuvre par l’intermédiaire de l’`héritage` et de la `redéfinition` de méthodes. Ainsi, lorsqu’on appelle une méthode redéfinie dans plusieurs classes d’une hiérarchie, celle qui sera effectivement exécutée sera choisie en fonction du type de l’objet au moment de l’exécution (type dynamique).
+
+```python
+class Animal:
+    def __init__(self, nom):
+        self.nom = nom
+
+    def dormir(self):
+        print( "zzZZZzzZz ..." )
+
+    def __str__(self):
+        return f"Je suis un {self.__class__.__name__} et mon nom est {self.nom}"
+```
+
+```python
+class Chat(Animal):
+    def __init__(self, nom, race):
+        super().__init__(nom)   
+        self.race = race
+
+    def miauler(self):
+        print( "miaou !!!" )
+
+    def __str__(self):
+        return f"{super().__str__()}, je suis un chat de race {self.race}" 
+```
+```python
+ulysse = Animal( "Ulysse" )
+ulysse.dormir()
+print(ulysse)
+
+>> zzZZZzzZz ...
+>> Je suis un Animal et mon nom est Ulysse
+
+marcel = Chat ( "Marcel", "siamoise" )
+marcel.dormir()
+marcel.miauler()
+print( marcel );
+
+>> zzZZZzzZz ...
+>> miaou !!!
+>> Je suis un Chat et mon nom est Marcel, je suis un chat de race siamoise
+
+ulysse = Chat ( "Ulysse", "persane" )
+ulysse.dormir()
+ulysse.miauler()
+print(ulysse)
+
+>> zzZZZzzZz ...
+>> miaou !!!
+>> Je suis un Chat et mon nom est Ulysse, je suis un chat de race persane
+```
