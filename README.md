@@ -120,3 +120,4 @@ Une entité polymorphe est une entité qui peut prendre plusieurs formes. Le pol
 
 Une méthode exécutée sur un objet est choisie en fonction du type dynamique de l’objet sur lequel elle s’applique, au moment de l’exécution.
 
+le polymorphisme est donc mis en oeuvre par l’intermédiaire de l’`héritage` et de la `redéfinition` de méthodes. Ainsi, lorsqu’on appelle une méthode redéfinie dans plusieurs classes d’une hiérarchie, celle qui sera effectivement exécutée sera choisie en fonction du type de l’objet au moment de l’exécution (type dynamique).
