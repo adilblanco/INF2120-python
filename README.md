@@ -145,28 +145,29 @@ class Chat(Animal):
 
     def __str__(self):
         return f"{super().__str__()}, je suis un chat de race {self.race}" 
-```
-```python
+
+
 ulysse = Animal( "Ulysse" )
 ulysse.dormir()
 print(ulysse)
-
->> zzZZZzzZz ...
->> Je suis un Animal et mon nom est Ulysse
 
 marcel = Chat ( "Marcel", "siamoise" )
 marcel.dormir()
 marcel.miauler()
 print( marcel );
 
->> zzZZZzzZz ...
->> miaou !!!
->> Je suis un Chat et mon nom est Marcel, je suis un chat de race siamoise
-
 ulysse = Chat ( "Ulysse", "persane" )
 ulysse.dormir()
 ulysse.miauler()
 print(ulysse)
+```
+```
+>> zzZZZzzZz ...
+>> Je suis un Animal et mon nom est Ulysse
+
+>> zzZZZzzZz ...
+>> miaou !!!
+>> Je suis un Chat et mon nom est Marcel, je suis un chat de race siamoise
 
 >> zzZZZzzZz ...
 >> miaou !!!
